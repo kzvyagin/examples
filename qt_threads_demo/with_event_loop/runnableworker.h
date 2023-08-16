@@ -4,7 +4,25 @@
 #include <QRunnable>
 #include <QObject>
 #include <QEventLoop>
+/**
+ * RunnableWorker is an independent class implements thread with event loop.
+ *
+ *┏━━━━━━━━━━━━━━━━━━━━━━┓
+ *┃  QThread [QRunnable] ┃          ┌───────┐
+ *┃                      ┃         ┌───────┐│
+ *┃  ╔═══════════════╗ ┌ ┃←───────┌───────┐│┘
+ *┃  ║ QEventLoop ┌↢ ║←┘ ┃        │ signal│┘
+ *┃  ║ ┌──────────┴┐ ║   ┃        └───────┘
+ *┃  ║ │ EventList │ ║   ┃
+ *┃  ║ └──┬──────┬─┘ ║   ┃
+ *┃  ║    ↓      ↓   ║   ┃
+ *┃  ║ ┌─────┐┌─────┐║   ┃
+ *┃  ║ │slotA││slotB│║   ┃
+ *┃  ║ └─────┘└─────┘║   ┃
+ *┃  ╚═══════════════╝   ┃
+ *┗━━━━━━━━━━━━━━━━━━━━━━┛
 
+*/
 class RunnableWorker : public QObject, public QRunnable
 {
     Q_OBJECT

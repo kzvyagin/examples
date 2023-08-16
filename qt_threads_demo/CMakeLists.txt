@@ -17,13 +17,17 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 set( PUBLIC_HEADERS
      with_event_loop/runnableworker.h
      with_event_loop/taskworker.h
+     with_event_loop/taskservice.h
      simple_threads/simplethread.h
+     simple_threads/simplerun.h
 )
 
 set( PUBLIC_SOURCES
      with_event_loop/runnableworker.cpp
      with_event_loop/taskworker.cpp
+     with_event_loop/taskservice.cpp
      simple_threads/simplethread.cpp
+     simple_threads/simplerun.cpp
 )
 
 add_executable(qt_threads_demo
