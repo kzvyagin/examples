@@ -5,6 +5,12 @@
 #include <QtConcurrent/QtConcurrentRun>
 #include <QFuture>
 
+
+/*
+ * This  SimpleRun domonstates sinple usage of threading without eventloop and singal/slot connectivity;
+ * This is a part of qt_trads_demo without slot/signals
+*/
+
 class SimpleRun: public QObject
 {
     Q_OBJECT

@@ -5,6 +5,7 @@
 /**
  * @brief The TaskWorker class
  * Implements class for douing some usefull job that will be moved to thread
+ * Be carefully, do not close sockets in destructor method, beacause destructor will be called in parent thread? and you'll got undevbehaviar
  */
 
 static int workerCounter=0;
