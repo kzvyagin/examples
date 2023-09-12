@@ -30,8 +30,8 @@ private slots:
     void metCondition();
 
 private:
-   QMutex treadLock;
-   QWaitCondition condition;
+   QMutex mutex;
+   QWaitCondition waitMutex;
 
 };
 

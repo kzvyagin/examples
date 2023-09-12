@@ -21,6 +21,7 @@ set( PUBLIC_HEADERS
      with_event_loop/stablethread.h
      with_event_loop/stabletaskservice.h
      with_event_loop/periodicworker.h
+     with_event_loop/periodicthread.h
      simple_threads/simplethread.h
      simple_threads/simplerun.h
 )

@@ -35,7 +35,7 @@ protected:
         delete _w;
     }
 
-private:
+protected:
     StableWorker *_w;
 };
 

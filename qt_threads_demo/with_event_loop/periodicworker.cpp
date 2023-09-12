@@ -1,32 +1,34 @@
 #include "periodicworker.h"
+#include <QDebug>
 
 PeriodicWorker::PeriodicWorker(QObject *parent):
     QObject(parent),
-    treadLock()
+    mutex()
 {
-    treadLock.lock();
+    mutex.lock();
 }
 
 PeriodicWorker::~PeriodicWorker()
 {
-  condition.wakeAll();
-  treadLock.unlock();
+  waitMutex.wakeAll();
+  mutex.unlock();
 }
 
 void PeriodicWorker::awake()
 {
-    condition.wakeAll();
+    waitMutex.wakeAll();
 }
 
 void PeriodicWorker::fellAsleep()
 {
     QMetaObject::invokeMethod(this, &PeriodicWorker::metCondition);
     // acquiring mutex to block the calling thread
-    treadLock.lock();
-    treadLock.unlock();
+    mutex.lock();
+    mutex.unlock();
 }
 
 void PeriodicWorker::metCondition()
 {
-    condition.wait(&treadLock);
+    waitMutex.wait(&mutex);
+    qDebug()<<Q_FUNC_INFO<<"Proceed condition slot";
 }
