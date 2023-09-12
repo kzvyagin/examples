@@ -22,6 +22,7 @@ set( PUBLIC_HEADERS
      with_event_loop/stabletaskservice.h
      with_event_loop/periodicworker.h
      with_event_loop/periodicthread.h
+     with_event_loop/periodictaskservice.h
      simple_threads/simplethread.h
      simple_threads/simplerun.h
 )
@@ -32,6 +33,7 @@ set( PUBLIC_SOURCES
      with_event_loop/taskservice.cpp
      with_event_loop/stabletaskservice.cpp
      with_event_loop/periodicworker.cpp
+     with_event_loop/periodictaskservice.cpp
      simple_threads/simplethread.cpp
      simple_threads/simplerun.cpp
 )

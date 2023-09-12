@@ -4,7 +4,7 @@
 #include "runnableworker.h"
 #include "taskservice.h"
 #include "taskworker.h"
-
+#include "periodictaskservice.h"
 
 
  /// next section Pausing and resuming the threads (Periodiacl jobs)
@@ -32,6 +32,6 @@ int main(int argc, char *argv[])
 
     // TODO place here example
 
-
+    usageExampleOfPeriodicTaskService();
     return a.exec();
 }

@@ -7,8 +7,15 @@ class PeriodicThread : public StableThread<PeriodicWorker>
 {
 public:
 
+    explicit PeriodicThread(PeriodicWorker *worker,
+                         QObject *parent = nullptr)
+        : StableThread<PeriodicWorker>(worker,parent) {
+        StableThread<PeriodicWorker>::worker()->moveToThread(this);
+        StableThread<PeriodicWorker>::start();
+    }
+
     ~PeriodicThread() {
-        restor();
+        restore();
         StableThread<PeriodicWorker>::quit();
         StableThread<PeriodicWorker>::wait();
     }
@@ -20,7 +27,7 @@ public:
         }
     }
 
-    void restor() {
+    void restore() {
         auto worker = qobject_cast<PeriodicWorker*>(StableThread<PeriodicWorker>::worker());
         if (worker != nullptr) {
             worker->awake();

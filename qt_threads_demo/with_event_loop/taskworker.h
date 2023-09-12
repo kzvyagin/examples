@@ -15,7 +15,7 @@ class TaskWorker: public QObject
     Q_OBJECT
 public:
     TaskWorker(QObject *parent = nullptr);
-
+    ~TaskWorker();
 public slots:
     /**
      * @brief startDoingJob slot that starts a job
