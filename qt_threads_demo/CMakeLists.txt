@@ -20,6 +20,7 @@ set( PUBLIC_HEADERS
      with_event_loop/taskservice.h
      with_event_loop/stablethread.h
      with_event_loop/stabletaskservice.h
+     with_event_loop/periodicworker.h
      simple_threads/simplethread.h
      simple_threads/simplerun.h
 )
@@ -29,6 +30,7 @@ set( PUBLIC_SOURCES
      with_event_loop/taskworker.cpp
      with_event_loop/taskservice.cpp
      with_event_loop/stabletaskservice.cpp
+     with_event_loop/periodicworker.cpp
      simple_threads/simplethread.cpp
      simple_threads/simplerun.cpp
 )
