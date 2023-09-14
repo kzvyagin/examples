@@ -14,7 +14,7 @@ public:
 
 public:
 signals:
-    void sendWorkChank(const QVariantHash &payload);
+    void sendWorkChank();//const QVariantHash &payload
 
 };
 

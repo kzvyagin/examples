@@ -27,7 +27,9 @@ public:
     void fellAsleep();
 
 public slots:
-    void planDoJob(const QVariantHash &payload);
+    //void planDoJob(const QVariantHash &payload);
+    void planDoJob();
+
 
 private:
    QMutex mutex;

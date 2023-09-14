@@ -30,14 +30,18 @@ void PeriodicWorker::fellAsleep()
     //QGenericArgument argumentTable[ 1 ];
     //QVariantHash h
     //QMetaObject::invokeMethod(this, &PeriodicWorker::planDoJob , argumentTable[0]);
-    planDoJob(QVariantHash());
+    QMetaObject::invokeMethod(this, &PeriodicWorker::planDoJob );
+
+    //planDoJob(QVariantHash());
     // acquiring mutex to block the calling thread
     mutex.lock();
     mutex.unlock();
 }
 
-void PeriodicWorker::planDoJob(const QVariantHash &payload)
+//void PeriodicWorker::planDoJob(const QVariantHash &payload)
+void PeriodicWorker::planDoJob()
 {
+    qDebug()<<Q_FUNC_INFO<<__LINE__<<"threadId:"<<QThread::currentThreadId()<<"planing...";
     waitMutex.wait(&mutex);
     qDebug()<<Q_FUNC_INFO<<__LINE__<<"threadId:"<<QThread::currentThreadId()<<"Proceed condition slot";
 }
