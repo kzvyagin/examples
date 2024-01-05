@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
 
-project(qt_labda_slot LANGUAGES CXX)
+project(qt_lambda_slot LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -21,12 +21,12 @@ set ( PUBLIC_HEADERS
 set( PUBLIC_SOURCES
     worker.cpp
 )
-add_executable(qt_labda_slot
+add_executable(qt_lambda_slot
   ${PUBLIC_HEADERS}
   ${PUBLIC_SOURCES}
   main.cpp
 )
-target_link_libraries(qt_labda_slot Qt${QT_VERSION_MAJOR}::Core)
+target_link_libraries(qt_lambda_slot Qt${QT_VERSION_MAJOR}::Core)
 
-install(TARGETS qt_labda_slot
+install(TARGETS qt_lambda_slot
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
